@@ -25,15 +25,15 @@ var (
 	DefaultConfigFiles = []string{"config.yml", "config.yaml"}
 
 	// DefaultUnixConfigLocation is the primary location to find a config file
-	DefaultUnixConfigLocation = "/usr/local/etc/cloudflared"
+	DefaultUnixConfigLocation = "/opt/usr/local/etc/cloudflared"
 
 	// DefaultUnixLogLocation is the primary location to find log files
-	DefaultUnixLogLocation = "/var/log/cloudflared"
+	DefaultUnixLogLocation = "/opt/var/log/cloudflared"
 
 	// Launchd doesn't set root env variables, so there is default
 	// Windows default config dir was ~/cloudflare-warp in documentation; let's keep it compatible
 	defaultUserConfigDirs = []string{"~/.cloudflared", "~/.cloudflare-warp", "~/cloudflare-warp"}
-	defaultNixConfigDirs  = []string{"/etc/cloudflared", DefaultUnixConfigLocation}
+	defaultNixConfigDirs  = []string{"/opt/etc/cloudflared", DefaultUnixConfigLocation}
 
 	ErrNoConfigFile = fmt.Errorf("Cannot determine default configuration path. No file %v in %v", DefaultConfigFiles, DefaultConfigSearchDirectories())
 )
